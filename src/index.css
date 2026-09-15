@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    background-color: #08050a;
+    color: #f5ede8;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+  }
+
+  /* Prevent text selection during the experience for a more app-like feel */
+  .no-select {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+}
+
+@layer components {
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .vignette {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 40;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(8, 5, 10, 0.6) 100%);
+  }
+
+  .glow-burgundy {
+    box-shadow: 0 0 40px 8px rgba(114, 38, 47, 0.25), 0 0 80px 20px rgba(114, 38, 47, 0.12);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px rgba(199, 123, 133, 0.4), 0 0 60px rgba(139, 45, 59, 0.2);
+  }
+
+  .glass {
+    background: rgba(26, 22, 32, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(199, 123, 133, 0.12);
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center px-10 py-4 rounded-full
+           font-sans font-medium tracking-wide text-cream-500
+           border border-rose-700/30
+           bg-gradient-to-b from-wine-700/40 to-wine-900/40
+           transition-all duration-500 ease-out
+           hover:from-wine-600/50 hover:to-wine-800/50 hover:border-rose-500/40
+           hover:scale-[1.03] active:scale-[0.98]
+           no-select cursor-pointer;
+  }
+
+  .btn-ghost {
+    @apply relative inline-flex items-center justify-center
+           font-sans font-light tracking-[0.2em] uppercase text-sm
+           text-rose-300/60 hover:text-rose-300
+           transition-all duration-500 ease-out
+           no-select cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+  .animate-delay-400 { animation-delay: 0.4s; }
+  .animate-delay-500 { animation-delay: 0.5s; }
+  .animate-delay-700 { animation-delay: 0.7s; }
+  .animate-delay-1000 { animation-delay: 1s; }
+  .animate-delay-1500 { animation-delay: 1.5s; }
+  .animate-delay-2000 { animation-delay: 2s; }
+  .animate-delay-2500 { animation-delay: 2.5s; }
+  .animate-delay-3000 { animation-delay: 3s; }
+
+  .opacity-0-init {
+    opacity: 0;
+  }
+
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Custom scrollbar — hidden for immersive feel */
+::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
