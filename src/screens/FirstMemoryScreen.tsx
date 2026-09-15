@@ -6,7 +6,7 @@ interface FirstMemoryScreenProps {
 }
 
 const PHOTO_URL = encodeURI(
-  '/images/photo_2026-09-15_15-05-20_(3).jpg'
+  '/images/WhatsApp_Image_2026-02-12_at_2.46.13_PM copy.jpeg'
 );
 const FALLBACK_PHOTO_URL =
   'https://images.pexels.com/photos/33931414/pexels-photo-33931414.jpeg?auto=compress&cs=tinysrgb&w=900';

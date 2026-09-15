@@ -148,7 +148,7 @@ export default function FinalSurpriseScreen({ onReplay, onOpen }: FinalSurpriseS
           )}
           {revealStep >= 5 && (
             <p className="font-serif italic text-2xl sm:text-3xl text-rose-200 text-glow animate-fade-in-up mb-8">
-              Happy Birthday, my wifey.
+              Happy Birthday, my wifey🥹❤️
             </p>
           )}
           {revealStep >= 6 && (

@@ -19,7 +19,7 @@ export default function BeginScreen({ onBegin }: BeginScreenProps) {
 
       <Reveal delay={300} duration="slow">
         <p className="font-serif italic text-2xl sm:text-3xl md:text-4xl text-rose-200/80 tracking-wide">
-          I made something for you...
+          I made something for you My Devummaaa...
         </p>
       </Reveal>
 
